@@ -1,0 +1,259 @@
+
+@font-face{
+    font-family:regular;
+    src:url(../Space_Mono/SpaceMono-Regular.ttf);
+}
+
+html, body{
+    min-height:100%;
+    height:100%;
+}
+
+body{
+    background-color:hsl(185, 41%, 84%);
+    font-family:regular;
+}
+
+h3{
+    color:hsl(186, 14%, 43%);
+}
+
+h3{
+    font-size:18px;
+}
+
+button{
+    font-size:24px;
+    background-color:hsl(183, 100%, 15%);
+    border:none;
+    margin-bottom:10px;
+    color:white;
+    border-radius:5px;
+}
+
+button:hover{
+    cursor:pointer;
+}
+
+input{
+    font-family:regular;
+    text-align:right;
+    font-size:24px;
+    background-color:hsl(189, 41%, 97%);
+    border-radius:3px;
+    border:none;
+    direction:rtl;
+    outline: none;
+    color:hsl(183, 100%, 15%);
+    height:2em;
+}
+
+input:focus{
+    border:1px solid hsl(172, 67%, 45%);
+    height:2em;
+}
+
+
+
+.button-group{
+    display:flex;
+    flex-wrap:wrap;
+    height:60%;
+}
+
+
+
+#custom{
+    background-color:hsl(189, 41%, 97%);
+    color:hsl(183, 100%, 15%);
+}
+
+.bill{
+    position:relative;
+}
+
+.dollar-icon{
+    position:absolute;
+    left:1em;
+    top:5em;
+    bottom:0;
+    z-index:5000;
+}
+
+.people-number{
+    position:relative;
+    width:100%;
+}
+
+.alert{
+    display:none;
+    color:red;
+    position:absolute;
+    top:2em;
+    right:2em;
+}
+.people-icon{
+    position:absolute;
+    left:1em;
+    top:5em;
+}
+
+.custom-input{
+    display:none;
+    width:27%;
+    height:2em;
+    margin-right:10px;
+    
+}
+
+.top{
+    text-align:center;
+}
+
+.main-content{
+    background-color:white;
+    border-radius:20px;
+    padding:30px;
+}
+
+.bill{
+    grid-area:bill;
+}
+
+.selections{
+    grid-area:selections;
+}
+
+.people-number{
+    grid-area:people-number;
+}
+
+.results{
+    grid-area:results;
+    background-color: hsl(183, 100%, 15%);
+    padding:2em;
+    border-radius:1.5em;
+    display:grid;
+    grid-template-areas:"tip tipres"
+                        "total totalres"
+                        ".     ."
+                        "reset reset";
+                        
+    grid-template-rows:repeat(4,1fr);
+}
+
+.results h3{
+    color:white;
+}
+
+#tipAmount{
+    grid-area:tip;
+}
+
+#totalAmount{
+    grid-area:total;
+}
+
+#Tip{
+    grid-area:tipres;
+    position:relative;
+}
+
+#Tot{
+    grid-area:totalres;
+    position:relative;
+}
+
+
+.final-sum{
+    color:hsl(172, 67%, 45%);
+    position:absolute;
+    top:10%;
+    bottom:10%;
+    right:10%;
+    font-size:42px;
+}
+.reset{
+    grid-area:reset;
+    color:hsl(183, 100%, 15%);
+    background-color:hsl(172, 67%, 45%);
+    text-align:center;
+    height:50%;
+    border-radius:0.5em;
+    padding-top:0.25em;
+    padding-bottom:0.25em;
+
+}
+
+.per-person{
+    color:hsl(184, 14%, 56%)
+}
+
+
+@media screen and (min-width:0px){
+    .main-content{
+        margin:auto;
+        width:80%;
+        display:grid;
+        justify-content: center;
+        grid-template-rows:repeat(8,1fr);
+        grid-template-columns:repeat(1,1fr);
+        grid-template-areas:"bill"
+                            "selections"
+                            "selections"
+                            "people-number"
+                            "results"
+                            "results"
+                            "results"
+                            "results";
+        justify-content: center;
+        grid-column-gap:2em;
+    }
+
+    .bill-input{
+        position:absolute;
+        width:100%;
+    }
+    .button-group{
+        padding:0;
+        justify-content:space-between;
+        margin:0;
+    }
+    .button-group button{
+        width:45%;
+       
+        height:2em;
+    }
+    .results{
+        width:calc(100%-60px);
+        margin-top:1em;
+    }
+    .people-number input{
+        width:100%;
+        position:absolute;
+    }
+}
+
+@media screen and (min-width:1080px){
+    .main-content{
+        overflow:hidden;
+        width:75%;
+        margin:auto;
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        grid-template-rows:repeat(4,1fr);
+        grid-template-areas: "bill            results"          
+                             "selections      results"
+                             "selections      results"
+                             "people-number   results";
+        grid-column-gap:2em;
+                            
+    }
+
+    .button-group button{
+        width:27%;
+        margin-right:10px;
+        height:2em;
+    }
+
+}
